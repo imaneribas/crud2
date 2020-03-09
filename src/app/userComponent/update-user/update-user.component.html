@@ -1,0 +1,45 @@
+<mat-card-header>
+   <br>
+  </mat-card-header>
+
+    <div class="container ">
+
+        <div class="form-group container p-5">
+
+            <div class="">
+              <label>userName</label>
+              <input type="text"  class="form-control"[(ngModel)]="user.userName">
+              <input type="hidden" [(ngModel)]="user.id">
+            </div>
+            <br>
+            <div class="">
+              <label>firstName</label>
+              <input type="text"  class="form-control" [(ngModel)]="user.firstName">
+            </div>
+<br>
+          <div class="">
+            <label>lastName</label>
+            <input type="text"  class="form-control" [(ngModel)]="user.lastName">
+          </div>
+          <br>
+          <div class="">
+            <label>phoneNumber</label>
+            <input type="text"  class="form-control" [(ngModel)]="user.phoneNumber">
+          </div>
+
+<br><br><br>
+<div class=" ">
+  <button type="submit" class="btn btn-warning d-flex m-auto" (click)="save()">
+     save
+  </button>
+  <!-- <button type="submit" (click)="goBack()" class="btn btn-warning" >
+     return
+    </button> -->
+  </div>
+
+
+
+
+
+
+

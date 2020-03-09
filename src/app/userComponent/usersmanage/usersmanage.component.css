@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+  th{
+    font-size: 15px;
+    color: black;
+  }
+  button {
+    color:rgb(110, 14, 90);
+  }
+  .nav-text {
+    vertical-align:middle;
+}
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: rgb(114, 10, 90) !important;
+}

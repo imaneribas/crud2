@@ -1,0 +1,49 @@
+<!-- <nav class="navbar navbar-expand-sm navbar-expand-lg ">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+
+      <li class="nav-item">
+        <a class="nav-link " routerLink="users">Manage users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="login">Login</a>
+      </li>
+      
+  </div>
+</nav> -->
+
+
+<div> 
+  <mat-toolbar >
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    
+    
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="">Manage users</a>
+      <a mat-button routerLink="/login">Login</a>
+     
+    </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        <a mat-button routerLink="">Manage users</a>
+      <a mat-button routerLink="/login">Login</a>
+      </div>
+    </mat-sidenav>
+    
+  </mat-sidenav-container>
+</div>

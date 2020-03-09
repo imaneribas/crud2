@@ -1,0 +1,73 @@
+/* .i.fa.fa-user-circle.ml-2{
+    font-size: 25px;
+}
+nav{
+background-color:rgb(114, 10, 90);
+
+
+}
+nav a{
+  color: rgb(233, 233, 74);
+  font-size: 16px;
+}
+nav a:hover{
+  color: gainsboro;
+} */
+
+
+
+div {
+  overflow: inherit;
+}
+.mat-button{
+  color: rgb(233, 233, 74);
+  text-decoration: none;
+  font-size: 16px;
+}
+.mat-button:hover{
+  color: gainsboro;
+
+}
+
+.mat-toolbar{
+height: 7vh;
+background-color: rgb(114, 10, 90);
+}
+.mat-sidenav-container{
+  background-color: lightskyblue;
+ 
+
+  color:  rgb(114, 10, 90);
+  
+  }
+  .mat-icon-button{
+    color: rgb(233, 233, 74);
+  }
+
+/* .companyName{
+  font-size: 150%;
+}
+
+
+
+
+a{
+  text-decoration: none;
+  font-size: 110%;
+  white-space: normal;
+}
+
+button{
+  font-size: 110%;
+  min-width: min-content;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+} */
+
+

@@ -1,0 +1,121 @@
+<!--
+   <div class="search-hero mt-5">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching ">
+  </div>
+  <table class="table mt-5 ">
+    <thead >
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">email</th>
+        <th scope="col">jobtitle</th>
+        <th scope="col">telephone</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let x of users | filter:searchText">
+        <th scope="row">{{x.id}}</th>
+        <td>{{x.Nom}}</td>
+        <td>{{x.Prenom}}</td>
+        <td>{{x.email}}</td>
+        <td>{{x.jobTitle}}</td>
+        <td>{{x.Telephone}}</td>
+        <td>
+          <button (click)="delete(x.id)" class="btn btn-danger" >Delete</button>
+        </td>
+        <td>
+          <button class="btn btn-primary" routerLink="update/{{x.id}}" > Update </button></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <button  class="btn btn-primary" routerLink="add" >Ajouter un user </button>
+   -->
+<div class="mt-5"> 
+<div >
+   <button class="btn  btn-outline-warning  float-right "  (click)="openModal()"><i class="fas fa-plus mr-2"></i>Create User</button>
+
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+</div>
+<br><br>
+   <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="table-responsive-md">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef> userName </th>
+        <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> firstName </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> lastName </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="phoneNumber">
+          <th mat-header-cell *matHeaderCellDef> phoneNumber </th>
+          <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="isEnabled">
+          <th mat-header-cell *matHeaderCellDef >Enabled user</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-checkbox  [(ngModel)]="element.isEnabled" (click)="disabledUser(element.id)" ></mat-checkbox>
+          </td>
+        </ng-container>
+
+      <ng-container matColumnDef="emailConfirmed">
+        <th mat-header-cell *matHeaderCellDef >email Confirmation</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox [(ngModel)]="element.emailConfirmed" disabled  ></mat-checkbox>
+        </td>
+      </ng-container>
+          <!-- Symbol Column -->
+      <!-- <ng-container matColumnDef="DateOfRegistration">
+        <th mat-header-cell *matHeaderCellDef> DateOfRegistration </th>
+        <td mat-cell *matCellDef="let element"> {{element.DateOfRegistration}} </td>
+      </ng-container> -->
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle bg-warning border-0 " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-cog mr-2"> </i>Action
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item"  (click)="deleteUser(element.id)">Delete</a>
+            <a class="dropdown-item"  routerLink="update/{{element.id}}">Update</a>
+
+          </div>
+        </div>
+      </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+
+
