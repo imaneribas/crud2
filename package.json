@@ -25,7 +25,7 @@
     "@material/dialog": "^5.1.0",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-search-filter": "^0.5.1",
     "ngx-toastr": "^12.0.0",
     "poper": "^0.1.1",
